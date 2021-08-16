@@ -1,0 +1,25 @@
+###
+GET http://localhost:3003/user/:id
+
+###
+GET http://localhost:3003/user/profile
+
+
+
+POST http://localhost:3003/user/signup 
+Content-Type: application/json
+
+{
+"name": "Amel", 
+"email": "", 
+"password": ""
+}
+
+###
+ POST http://localhost:3003/user
+ Content-Type: application/json
+ 
+ {
+     "name":
+
+ }

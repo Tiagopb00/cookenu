@@ -1,0 +1,24 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const app_1 = require("./app");
+const signup_1 = __importDefault(require("./endpoints/signup"));
+const login_1 = __importDefault(require("./endpoints/login"));
+const profile_1 = __importDefault(require("./endpoints/profile"));
+const getProfileById_1 = __importDefault(require("./endpoints/getProfileById"));
+const postRecipe_1 = __importDefault(require("./endpoints/postRecipe"));
+const getRecipeById_1 = __importDefault(require("./endpoints/getRecipeById"));
+const toFollow_1 = __importDefault(require("./endpoints/toFollow"));
+const unFollow_1 = __importDefault(require("./endpoints/unFollow"));
+const following_1 = __importDefault(require("./endpoints/following"));
+app_1.app.post("/user/signup", signup_1.default);
+app_1.app.post("/user/login", login_1.default);
+app_1.app.get("/user/profile", profile_1.default);
+app_1.app.get("/user/:id", getProfileById_1.default);
+app_1.app.post("/recipe/add", postRecipe_1.default);
+app_1.app.get("/recipe/:id", getRecipeById_1.default);
+app_1.app.post("/user/follow", toFollow_1.default);
+app_1.app.post("/user/unfollow", unFollow_1.default);
+app_1.app.get("/following", following_1.default);
