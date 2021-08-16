@@ -5,8 +5,14 @@ const userTable = "userTable"
 
 export class FollowerData {
 
- 
-    alreadyFollowing = async (id_user: string, id_following: string): Promise<any> => {
+    following = async (id_user:string, id_following:string): Promise<void> => {
+        await connection
+        .insert ({id_user, id_following})
+        .into(followerTable)
+    };
+
+    
+      alreadyFollowing = async (id_user: string, id_following: string): Promise<any> => {
     const result = await connection(followerTable)
     .select("*")
     .where(id_following)
